@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Heatly, a Low Carb Recipy app
+          Welcome to Heatly, a Low Carb Recipies app
         </h1>
 
         <p className={styles.description}>Get started</p>
