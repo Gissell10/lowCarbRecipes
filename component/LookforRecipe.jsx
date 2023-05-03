@@ -11,7 +11,7 @@ export default function LookforRecipe() {
   const options = {
     method: "GET",
     headers: {
-      'potato XXXgakjgfohsbknflkhgdhg;oseijhghiugaeivmchgdiyrgb'
+      "X-RapidAPI-Key": "goieshb;kjfdgl.bkfdjo;uwbrgjbj",
     },
   };
 
