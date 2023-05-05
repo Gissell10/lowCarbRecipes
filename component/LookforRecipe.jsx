@@ -11,7 +11,7 @@ export default function LookforRecipe() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "goieshb;kjfdgl.bkfdjo;uwbrgjbj",
+      "X-RapidAPI-Key": "vnajb;jdbjap'ojbfpsj;lvknsjnbkjvcn",
     },
   };
 
