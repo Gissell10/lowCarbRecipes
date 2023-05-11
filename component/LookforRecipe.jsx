@@ -11,7 +11,7 @@ export default function LookforRecipe() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "vnajb;jdbjap'ojbfpsj;lvknsjnbkjvcn",
+      "X-RapidAPI-Key": 
     },
   };
 
@@ -23,11 +23,11 @@ export default function LookforRecipe() {
   }
 
   return (
-    <Container maxWidth="sm">
+    <Container fixed>
       <Typography variant="h4" align="center" gutterBottom>
         Low Carb Recipes
       </Typography>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} align="center">
         <TextField
           id="outlined-size-small"
           label="Recipe name"

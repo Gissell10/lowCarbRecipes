@@ -8,7 +8,6 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  ExpandMoreIcon,
 } from "@mui/material";
 
 export default function Recipesrespond({ recipes }) {
@@ -37,13 +36,12 @@ export default function Recipesrespond({ recipes }) {
               </Typography>
               <Accordion>
                 <AccordionSummary
-                  // expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
                   <Typography>Look at the recipe</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails style={{ maxHeight: 200, overflow: "auto" }}>
                   <Typography variant="body2" color="secudary">
                     {recipe.steps}
                   </Typography>
