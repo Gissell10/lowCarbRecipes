@@ -1,64 +1,43 @@
 import * as React from "react";
-import {
-  Typography,
-  Container,
-  Card,
-  CardMedia,
-  CardActionArea,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 
 export default function Recipesrespond({ recipes }) {
   console.log(recipes);
   return (
-    <div class="album py-5 bg-body-tertiary">
-      <Container maxWidth="md">
-        <Typography variant="h3" align="center">
-          Popular Recipes
-        </Typography>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-          }}
-        >
+    <div className="album py-5 body-tertiary">
+      <div className="container">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {recipes.map((recipe) => (
-            <Card key={recipe.id} sx={{ maxWidth: "300px", margin: "10px" }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="200px"
-                  image={recipe.image}
+            <div className="col">
+              <div className="card shadow-sm">
+                <img
+                  src={recipe.image}
+                  className="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
                 />
-                <Typography gutterBottom variant="h5" component="div">
-                  {recipe.name}
-                </Typography>
-                <Typography variant="subtitle2">
-                  cooking time: {`${recipe.cookTime} min`}
-                </Typography>
-                <Accordion>
-                  <AccordionSummary
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography>Look at the recipe</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails
-                    style={{ maxHeight: 200, overflow: "auto" }}
-                  >
-                    <Typography variant="body2" color="secudary">
-                      {recipe.steps}
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </CardActionArea>
-            </Card>
+                <div className="card-body">
+                  <p className="card-text">{recipe.name}</p>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="btn-group">
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                    </div>
+                    <small className="text-body-secondary">
+                      <img src="/chef-hat.png" alt="" width="30%" height="30" />
+                      {`${recipe.cookTime}min`}
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

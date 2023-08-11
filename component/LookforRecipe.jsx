@@ -24,10 +24,10 @@ export default function LookforRecipe() {
   }
 
   return (
-    <section class="py-5 text-center container">
+    <section className="py-5 text-center container">
       <form onSubmit={handleSubmit} align="center">
         <TextField
-          class="my-2"
+          className="my-2"
           id="outlined-size-small"
           label="Let's cooking"
           size="small"
@@ -40,7 +40,7 @@ export default function LookforRecipe() {
         <Button
           variant="outlined"
           type="submit"
-          class="btn btn-outline-secondary my-2"
+          className="btn btn-outline-secondary my-2"
         >
           Search
         </Button>
