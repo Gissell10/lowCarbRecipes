@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import { Typography, Container, TextField, Button } from "@mui/material";
+import { TextField } from "@mui/material";
 import Recipesrespond from "./Recipesrespond";
+import Recipy from "./Recipy";
 
 export default function LookforRecipe() {
   const [query, setQuery] = useState(" ");
@@ -37,15 +38,16 @@ export default function LookforRecipe() {
           required
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Button
+        <button
           variant="outlined"
           type="submit"
           className="btn btn-outline-secondary my-2"
         >
           Search
-        </Button>
+        </button>
       </form>
       {recipes && recipes.length > 0 && <Recipesrespond recipes={recipes} />}
+      <Recipy recipes={recipes} />
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Typography } from "@mui/material";
 
 export default function Recipesrespond({ recipes }) {
   console.log(recipes);
@@ -11,6 +10,7 @@ export default function Recipesrespond({ recipes }) {
             <div className="col">
               <div className="card shadow-sm">
                 <img
+                  key={recipe.id}
                   src={recipe.image}
                   className="bd-placeholder-img card-img-top"
                   width="100%"
