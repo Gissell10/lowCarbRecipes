@@ -7,10 +7,9 @@ export default function Recipesrespond({ recipes }) {
       <div className="container">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {recipes.map((recipe) => (
-            <div className="col">
+            <div className="col" key={recipe.id}>
               <div className="card shadow-sm">
                 <img
-                  key={recipe.id}
                   src={recipe.image}
                   className="bd-placeholder-img card-img-top"
                   width="100%"

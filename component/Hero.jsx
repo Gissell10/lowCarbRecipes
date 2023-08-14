@@ -1,4 +1,4 @@
-import LookforRecipe from "./LookforRecipe";
+import Searchpages from "./Searchpages";
 
 export default function Hero() {
   return (
@@ -14,7 +14,7 @@ export default function Hero() {
           <p className="lead mb-4">
             Welcome to Heatly, a Low Carb Recipies app
           </p>
-          <LookforRecipe></LookforRecipe>
+          <Searchpages />
         </div>
       </div>
     </section>

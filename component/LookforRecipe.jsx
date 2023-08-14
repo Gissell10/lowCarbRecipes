@@ -1,32 +1,9 @@
-import * as React from "react";
-import { useState } from "react";
 import { TextField } from "@mui/material";
-import Recipesrespond from "./Recipesrespond";
-import Recipy from "./Recipy";
 
-export default function LookforRecipe() {
-  const [query, setQuery] = useState(" ");
-  const [recipes, setRecipes] = useState([]);
-
-  const url = `https://low-carb-recipes.p.rapidapi.com/search?name=${query}`;
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "0133a1c97cmsh1c643f36665c260p1bcc98jsnb87f73ef9c10",
-      "X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com",
-    },
-  };
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const res = await fetch(url, options);
-    const recipesData = await res.json();
-    setRecipes(recipesData);
-  }
-
+export default function LookforRecipe({ query, setQuery, onSubmit }) {
   return (
     <section className="py-5 text-center container">
-      <form onSubmit={handleSubmit} align="center">
+      <form onSubmit={onSubmit} align="center">
         <TextField
           className="my-2"
           id="outlined-size-small"
@@ -46,8 +23,6 @@ export default function LookforRecipe() {
           Search
         </button>
       </form>
-      {recipes && recipes.length > 0 && <Recipesrespond recipes={recipes} />}
-      <Recipy recipes={recipes} />
     </section>
   );
 }
