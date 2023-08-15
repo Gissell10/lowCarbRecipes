@@ -8,8 +8,8 @@ export default function Searchpages() {
 
   const url = `https://low-carb-recipes.p.rapidapi.com/search?`;
   const headers = {
-    "X-RapidAPI-Key": "0133a1c97cmsh1c643f36665c260p1bcc98jsnb87f73ef9c10",
-    "X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com",
+    "X-RapidAPI-Key": `${process.env.RECIPE_API_KEY}`,
+    "X-RapidAPI-Host": `${process.env.RECIPE_APP_AUTH_DOMAIN}`,
   };
   async function handleSubmit(query) {
     try {
