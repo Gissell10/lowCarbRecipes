@@ -8,16 +8,16 @@ export default function Searchpages() {
 
   const url = `https://low-carb-recipes.p.rapidapi.com/search?`;
   const headers = {
-    "X-RapidAPI-Key": `${process.env.RECIPE_API_KEY}`,
-    "X-RapidAPI-Host": `${process.env.RECIPE_APP_AUTH_DOMAIN}`,
+    "X-RapidAPI-Key": `${process.env.NEXT_PUBLIC_RECIPE_API_KEY}`,
+    "X-RapidAPI-Host": `${process.env.NEXT_PUBLIC_RECIPE_APP_AUTH_DOMAIN}`,
   };
   async function handleSubmit(query) {
     try {
-      const res = await fetch(`${url}name=${query}`, {
+      const response = await fetch(`${url}name=${query}`, {
         method: "GET",
         headers,
       });
-      const recipesData = await res.json();
+      const recipesData = await response.json();
       setRecipes(recipesData);
     } catch (error) {
       console.error("error feching recipes:", error);
