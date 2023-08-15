@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import Hero from "../component/Hero";
+import Searchpages from "../component/Searchpages";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main className="Home_main__nLjiQ">
-        <Hero></Hero>
+        <Searchpages />
       </main>
 
       <footer className={styles.footer}>

@@ -1,9 +1,17 @@
 import { TextField } from "@mui/material";
+import { useState } from "react";
 
-export default function LookforRecipe({ query, setQuery, onSubmit }) {
+export default function LookforRecipe({ onSubmit }) {
+  const [query, setQuery] = useState(" ");
   return (
     <section className="py-5 text-center container">
-      <form onSubmit={onSubmit} align="center">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit(query);
+        }}
+        align="center"
+      >
         <TextField
           className="my-2"
           id="outlined-size-small"

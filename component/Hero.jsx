@@ -14,7 +14,6 @@ export default function Hero() {
           <p className="lead mb-4">
             Welcome to Heatly, a Low Carb Recipies app
           </p>
-          <Searchpages />
         </div>
       </div>
     </section>

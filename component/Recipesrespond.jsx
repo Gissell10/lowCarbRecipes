@@ -27,7 +27,7 @@ export default function Recipesrespond({ recipes }) {
                       </button>
                     </div>
                     <small className="text-body-secondary">
-                      <img src="/chef-hat.png" alt="" width="30%" height="30" />
+                      <img src="/chef-hat.png" alt="" width="20" height="20" />
                       {`${recipe.cookTime}min`}
                     </small>
                   </div>
