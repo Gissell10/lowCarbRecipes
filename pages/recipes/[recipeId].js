@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Recipy from "../../component/Recipy";
 
 export default function RecipeDetails() {
   const router = useRouter();
+
   const [recipe, setRecipe] = useState();
 
-  const url = `https://low-carb-recipes.p.rapidapi.com/search?`;
+  const url = `https://low-carb-recipes.p.rapidapi.com/recipes/`;
   const headers = {
-    "X-RapidAPI-Key": `${process.env.RECIPE_API_KEY}`,
-    "X-RapidAPI-Host": `${process.env.RECIPE_APP_AUTH_DOMAIN}`,
+    "X-RapidAPI-Key": `${process.env.NEXT_PUBLIC_RECIPE_API_KEY}`,
+    "X-RapidAPI-Host": `${process.env.NEXT_PUBLIC_RECIPE_APP_AUTH_DOMAIN}`,
   };
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        "https://low-carb-recipes.p.rapidapi.com/recipes/"
-      );
-      const data = await response.json();
-      setData(data);
+      if (!router.query.recipeId) return;
+      const response = await fetch(`${url}${router.query.recipeId}`, {
+        method: "GET",
+        headers,
+      });
+      const recipe = await response.json();
+      setRecipe(recipe);
     })();
-  }, []);
-  return data ? <pre>Recipe id: {router.query.recipeId}</pre> : null;
+  }, [router.query.recipeId]);
+  return recipe ? <Recipy recipe={recipe} /> : null;
 }
