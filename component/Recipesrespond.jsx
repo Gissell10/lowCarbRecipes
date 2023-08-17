@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 
 export default function Recipesrespond({ recipes }) {
   console.log(recipes);
@@ -19,12 +20,14 @@ export default function Recipesrespond({ recipes }) {
                   <p className="card-text">{recipe.name}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
-                      <button
-                        type="button"
-                        className="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
+                      <Link href={`/recipes/${recipe.id}`}>
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-outline-secondary"
+                        >
+                          View
+                        </button>
+                      </Link>
                     </div>
                     <small className="text-body-secondary">
                       <img src="/chef-hat.png" alt="" width="20" height="20" />

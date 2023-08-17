@@ -1,5 +1,5 @@
-export default function Recipy({ recipes }) {
-  //console.log(recipes);
+export default function Recipy({ recipe }) {
+  console.log(recipe);
   return (
     <section>
       <div>
@@ -9,7 +9,7 @@ export default function Recipy({ recipes }) {
           width="100%"
           height="225"
         /> */}
-        <p>this is the recipe name {recipes.name}</p>
+        <p>{recipe.name}</p>
       </div>
     </section>
   );
