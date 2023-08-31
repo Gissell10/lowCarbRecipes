@@ -2,14 +2,31 @@ export default function Recipy({ recipe }) {
   console.log(recipe);
   return (
     <section>
-      <div>
-        {/* <img
+      <div
+        style={{
+          display: "grid",
+          justifyContent: "center",
+        }}
+      >
+        <img
           src={recipe.image}
-          className="bd-placeholder-img card-img-top"
-          width="100%"
-          height="225"
-        /> */}
-        <p>{recipe.name}</p>
+          alt={recipe.name}
+          style={{ objectFit: "cover", width: "600px", height: "600px" }}
+        />
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "50px, 50px, 50px",
+          columnGap: "30px",
+          justifyContent: "center",
+        }}
+      >
+        <span>Ingredients</span>
+        <span>Briefly</span>
+      </div>
+      <div style={{ width: "100px" }}>
+        <p>nnnnnnn</p>
       </div>
     </section>
   );
